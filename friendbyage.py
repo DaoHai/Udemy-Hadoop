@@ -12,10 +12,10 @@ class MRfriendbyage(MRJob):
         (ID, name, age, numFriends)=line.split(',')
         yield age, float(numFriends)
         
-    def reducer(self, age, numFriends): #age, numFriends is global var
+    def reducer(self, age, numFriend): #age, numFriends is global var
         total=0
         numElements=0
-        for x in numFriends: 
+        for x in numFriend: 
             total+=x
             numElements+=1
             
